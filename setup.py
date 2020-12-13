@@ -9,7 +9,7 @@ setup(
 	version=simplecfg.MODULE_VERSION,
 	packages=[simplecfg.MODULE_NAME],
 	url=simplecfg.MODULE_URL,
-	license='Mozilla Public License version 2.0',
+	license="Mozilla Public License version 2.0",
 	author=simplecfg.MODULE_AUTHOR,
 	author_email='',
 	description=simplecfg.MODULE_DESCRIPTION,
@@ -20,5 +20,5 @@ setup(
 		"License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
 		"Operating System :: OS Independent",
 	],
-	python_requires='>=3.6'
+	python_requires=">=3.3"
 )
