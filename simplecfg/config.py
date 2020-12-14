@@ -11,10 +11,10 @@ class Config:
 		if not os.path.exists(directory):
 			os.makedirs(directory)
 
+	def __get_config_file(self):
 		if not os.path.exists(self.__path):
 			open(self.__path, "w").close()
 
-	def __get_config_file(self):
 		f = open(self.__path, "r+")
 		if os.stat(self.__path).st_size == 0:
 			f.write("{}")
@@ -45,6 +45,9 @@ class Config:
 		f.seek(0)
 		f.truncate(0)
 		f.close()
+
+	def delete(self):
+		os.remove(self.__path)
 
 	def get_keys(self):
 		f = self.__get_config_file()

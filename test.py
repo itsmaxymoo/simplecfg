@@ -13,6 +13,7 @@ assert os.path.exists(simplecfg.dir.TEMP), simplecfg.dir.TEMP + " is NOT a valid
 
 # Ensure config file gets created
 c = simplecfg.Config(simplecfg.dir.TEMP, filename)
+c.get("")
 assert os.path.exists(os.path.join(simplecfg.dir.TEMP, filename)), "Config file not created"
 
 # Test with random data
@@ -67,5 +68,14 @@ assert c.get("dict") == {
 	"key3": {"skey1": 10},
 	"key4": [100, 2000]
 }, "Error recalling proper dict"
+
+# Test delete
+c.delete()
+assert not os.path.exists(os.path.join(simplecfg.dir.TEMP, filename)), "Config not deleted"
+
+# Test auto-create again after delete
+assert c.get("DOES_NOT_EXIST") == "", "Error creating new file"
+c.set("test", "testval")
+assert c.get("test") == "testval", "Error creating new file (2)"
 
 print("All tests passed!")
