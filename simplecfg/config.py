@@ -16,9 +16,16 @@ class Config:
 			open(self.__path, "w").close()
 
 		f = open(self.__path, "r+")
-		if os.stat(self.__path).st_size == 0:
-			f.write("{}")
+		data = f.read()
+
+		try:
+			json.loads(data)
+		except ValueError:
 			f.seek(0)
+			f.truncate(0)
+			f.write("{}")
+
+		f.seek(0)
 
 		return f
 
