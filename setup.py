@@ -9,15 +9,15 @@ setup(
 	version=simplecfg.MODULE_VERSION,
 	packages=[simplecfg.MODULE_NAME],
 	url=simplecfg.MODULE_URL,
-	license="Mozilla Public License version 2.0",
+	license="Apache License version 2.0",
 	author=simplecfg.MODULE_AUTHOR,
-	author_email='',
+	author_email="max.loiacono@protonmail.com",
 	description=simplecfg.MODULE_DESCRIPTION,
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 	classifiers=[
 		"Programming Language :: Python :: 3",
-		"License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+		"License :: OSI Approved :: Apache Software License",
 		"Operating System :: OS Independent",
 	],
 	python_requires=">=3.3"
