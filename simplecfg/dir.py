@@ -6,8 +6,6 @@ __os = platform.system()
 HOME = os.path.expanduser("~")
 APP_DATA = HOME
 CONFIG = HOME
-DOCUMENTS = os.path.join(HOME, "Documents")
-CWD = os.getcwd()
 TEMP = os.path.join("/", "tmp")
 
 if __os == "Linux":
