@@ -41,6 +41,26 @@ class Config:
 		self.__data = {}
 
 
+	def __len__(self):
+		return len(self.__data)
+
+
+	def __contains__(self, key: str):
+		return key in self.__data
+
+
+	def __getitem__(self, key: str):
+		return self.get(key)
+
+
+	def __setitem__(self, key: str, value):
+		self.set(key, value)
+
+
+	def __delitem__(self, key: str):
+		self.delete(key)
+
+
 	def read_file(self, load_if_corrupt = False):
 		f = self.__get_config_file()
 

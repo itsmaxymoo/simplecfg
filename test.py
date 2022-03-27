@@ -87,5 +87,13 @@ except:
 cfg.read_file(load_if_corrupt=True)
 assert cfg.dump() == "{}", "Incorrectly handled load_if_corrupt"
 
+# Test magic methods
+cfg["testkey"] = 78923
+cfg.set("tk2", "gg")
+assert cfg["tk2"] == "gg"
+assert cfg.get("testkey") == 78923
+assert len(cfg) == 2
+assert "tk2" in cfg
+
 
 print("All tests passed!")
