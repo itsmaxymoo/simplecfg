@@ -94,6 +94,21 @@ assert cfg["tk2"] == "gg"
 assert cfg.get("testkey") == 78923
 assert len(cfg) == 2
 assert "tk2" in cfg
+del cfg
+
+# Test SynchronousConfig
+cfg = simplecfg.Config(f)
+sync = simplecfg.SynchronousConfig(f)
+sync["key"] = 5
+sync.set("key2", 6)
+cfg.read_file()
+assert cfg.get("key") == 5
+del sync["key"]
+cfg.read_file()
+assert "key" not in cfg
+sync.wipe()
+cfg.read_file()
+assert len(sync) == 0
 
 
 print("All tests passed!")

@@ -36,7 +36,8 @@ class Config:
 
 	def dump(self) -> str:
 		return json.dumps(self.__data, indent=4, sort_keys=True)
-	
+
+
 	def wipe(self):
 		self.__data = {}
 

@@ -1,4 +1,5 @@
 from simplecfg.config import Config
+from simplecfg.syncconfig import SynchronousConfig
 
 MODULE_NAME = "simplecfg"
 MODULE_NAME_FULL = "SimpleCFG"
