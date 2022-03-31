@@ -2,5 +2,7 @@
 	"cSpell.words": [
 		"Loiacono",
 		"simplecfg"
-	]
+	],
+	
+	"autoDocstring.docstringFormat":"pep257"
 }

@@ -8,7 +8,20 @@ A library to easily manage program configuration, for Python.
 
 ## Quick Start
 
-# // TODO: this
+```python
+import simplecfg
+
+cfg = simplecfg.Config("settings.cfg")
+
+# Writing
+cfg.set("username", "Max")
+cfg["website"] = "https://itsmaxymoo.com"
+cfg.write_file()
+
+# Reading
+cfg.read_file()
+name = cfg.get("username") # 'name' contains "Max"
+```
 
 ## Predefined Directories
 

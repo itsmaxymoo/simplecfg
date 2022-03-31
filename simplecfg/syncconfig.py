@@ -2,6 +2,11 @@ from simplecfg.config import Config
 
 
 class SynchronousConfig(Config):
+	"""All usages are identical to simplecfg.Config, except changes are saved to the disk automatically.
+
+	**ALL MUTATORS** will trigger a write_file() operation!
+	"""
+
 	def __init__(self, path: str):
 		super().__init__(path)
 
