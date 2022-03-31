@@ -12,6 +12,9 @@ class Config:
 
 
 	def get(self, key: str):
+		if type(key) is not str:
+			key = str(key)
+
 		if key in self.__data:
 			return self.__data[key]
 		else:
